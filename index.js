@@ -1,4 +1,4 @@
-var resolve = require('resolve');
+var resolve = require('resolve-bower');
 var copy = require('shallow-copy');
 var concatMap = require('concat-map');
 var path = require('path');
@@ -10,9 +10,9 @@ var QUOTED = /^['"]|['"]$/g;
 var RELATIVE = /^\./;
 var SEPARATOR = '/';
 
-module.exports = reworkNPM;
+module.exports = reworkBower;
 
-function reworkNPM(opts) {
+function reworkBower(opts) {
     opts = opts || {};
     var root = opts.root || process.cwd();
     var prefilter = opts.prefilter || identity;

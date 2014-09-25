@@ -1,14 +1,14 @@
 {
-  "name": "rework-npm",
-  "version": "1.0.0",
-  "description": "Import CSS from npm modules using rework",
+  "name": "rework-bower",
+  "version": "0.0.1",
+  "description": "Import CSS from bower modules using rework",
   "main": "index.js",
   "scripts": {
     "test": "tap test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/reworkcss/rework-npm.git"
+    "url": "https://github.com/cellvia/rework-bower.git"
   },
   "keywords": [
     "rework",
@@ -18,10 +18,9 @@
     "npm",
     "modules"
   ],
-  "author": "Conrad Zimmerman <me@conradz.com>",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/reworkcss/rework-npm/issues"
+    "url": "https://github.com/cellvia/rework-bower/issues"
   },
   "devDependencies": {
     "convert-source-map": "^0.3.4",
@@ -33,7 +32,7 @@
   "dependencies": {
     "concat-map": "^0.0.1",
     "css": "^2.0.0",
-    "resolve": "^0.7.1",
+    "resolve-bower": "^0.0.1",
     "shallow-copy": "^0.0.1"
   }
 }

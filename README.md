@@ -1,6 +1,8 @@
-# rework-npm
+# rework-bower
 
-[![Build Status](https://travis-ci.org/reworkcss/rework-npm.svg?branch=master)](https://travis-ci.org/reworkcss/rework-npm)
+bower adaptation of [rework-npm](http://github.com/reworkcss/rework-npm.git)
+
+[![Build Status](https://travis-ci.org/reworkcss/rework.svg?branch=master)](https://travis-ci.org/reworkcss/rework)
 
 Import CSS styles from NPM modules using
 [rework](https://github.com/reworkcss/rework).
@@ -34,10 +36,10 @@ when finding dependencies.
 
 ```js
 var rework = require('rework'),
-    reworkNPM = require('rework-npm');
+    reworkBower = require('rework-bower');
 
 var output = rework('@import "test";', { source: 'my-file.css' })
-    .use(reworkNPM())
+    .use(reworkBower())
     .toString();
 
 console.log(output);
@@ -45,7 +47,7 @@ console.log(output);
 
 ## Reference
 
-### `reworkNPM([opts])`
+### `reworkBower([opts])`
 
 Creates a new plugin for rework that will import files from NPM.
 
@@ -62,7 +64,7 @@ Example:
 // Uses `<dir>/src/index.css` as the file path for the top level file. Also all
 // file paths in the source map will be relative to the `<dir>/src` folder.
 rework('@import "./abc";', { source: 'index.css' })
-    .use(reworkNPM({ root: path.join(__dirname, 'src') }))
+    .use(reworkBower({ root: path.join(__dirname, 'src') }))
     .toString();
 ```
 
@@ -78,7 +80,7 @@ Example:
 ```js
 // Imports the `dist/leaflet.css` file from the `leaflet` package
 rework('@import "leaflet";', { source: 'index.css' })
-    .use(reworkNPM({ shim: { 'leaflet': 'dist/leaflet.css' } }))
+    .use(reworkBower({ shim: { 'leaflet': 'dist/leaflet.css' } }))
     .toString();
 ```
 
@@ -97,7 +99,7 @@ Example:
 ```js
 // Imports the `styles/util.css` file
 rework('@import "util";', { source: 'index.css' })
-    .use(reworkNPM({ alias: { 'util': 'styles/util.css' } }))
+    .use(reworkBower({ alias: { 'util': 'styles/util.css' } }))
     .toString();
 ```
 
@@ -105,14 +107,14 @@ rework('@import "util";', { source: 'index.css' })
 // Imports the `styles/index.css` file if there is a `styles` directory,
 // otherwise the `styles.css` file.
 rework('@import "util";', { source: 'index.css' })
-    .use(reworkNPM({ alias: { 'util': 'styles' } }))
+    .use(reworkBower({ alias: { 'util': 'styles' } }))
     .toString();
 ```
 
 ```js
 // Imports the `styles/other.css` file
 rework('@import "util/other";', { source: 'index.css' })
-    .use(reworkNPM({ alias: { 'util': 'styles' } }))
+    .use(reworkBower({ alias: { 'util': 'styles' } }))
     .toString();
 ```
 
@@ -126,7 +128,7 @@ Example:
 ```js
 // Process SCSS files
 rework('@import "./some-file.scss";', { source: 'index.css' })
-    .use(reworkNPM({ prefilter: compile }))
+    .use(reworkBower({ prefilter: compile }))
     .toString();
 
 function compile(src, file) {

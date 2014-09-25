@@ -1,5 +1,5 @@
 var rework = require('rework');
-var reworkNpm = require('../');
+var reworkBower = require('../');
 var fs = require('fs');
 var path = require('path');
 
@@ -8,7 +8,7 @@ var outFile = path.join(__dirname, 'compiled.css');
 
 var input = fs.readFileSync(entry, 'utf8');
 var output = rework(input, { source: path.relative(__dirname, entry) })
-    .use(reworkNpm())
+    .use(reworkBower())
     .toString({ sourcemap: true });
 
 fs.writeFileSync(outFile, output, 'utf8');
